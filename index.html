@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li class="brand"><a href="index.html"><img src="beatboxx-logo.png" alt="beatboxx-logo"></a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="nav-spacer"></li>
+            <li class="user-section" id="user-section">
+                <span id="username-display"></span>
+                <button id="logout-btn" class="logout-btn">Log out</button>
+            </li>
+            <li class="login-section" id="login-section">
+                <a href="signup.html" class="nav-signup">Sign up</a>
+                <a href="login.html" class="nav-login">Log in</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    
+    <div class="container">
+        <h1>Welcome to Beatboxx</h1>
+        <p>Your favorite music, all in one place.</p>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for songs, artists...">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <div class="songs-list" id="songs-list">
+            <div class="loading" id="loading">Loading songs...</div>
+            <!-- Songs will be loaded dynamically -->
+        </div>
+    </div>
+
+    
+
+
+    <!-- Song Details Modal -->
+    <div id="song-modal" class="modal">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <img id="modal-img" src="" alt="Album Art">
+            <div class="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-artist" class="artist"></p>
+                <p id="modal-album"></p>
+                <p id="modal-year"></p>
+                <p id="modal-duration"></p>
+                <button id="modal-play-btn" class="play-btn">▶ Play</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <input type="range" min="0" max="100" value="0" class="progress-bar" id="progress-bar"/>
+        <div class="controls">
+            <button id="prev-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <button id="play-pause-btn">
+                <svg id="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg id="pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <button id="next-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
